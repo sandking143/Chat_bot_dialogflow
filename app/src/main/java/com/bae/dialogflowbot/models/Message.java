@@ -1,6 +1,6 @@
 package com.bae.dialogflowbot.models;
 
-public class  Message {
+public class Message {
 
   private String message;
   private boolean isReceived;
