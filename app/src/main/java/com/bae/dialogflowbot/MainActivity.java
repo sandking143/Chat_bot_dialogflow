@@ -1,5 +1,6 @@
 package com.bae.dialogflowbot;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements BotReply {
     chatView.setAdapter(chatAdapter);
 
     btnSend.setOnClickListener(new View.OnClickListener() {
+      @SuppressLint("NotifyDataSetChanged")
       @Override public void onClick(View view) {
         String message = editMessage.getText().toString();
         if (!message.isEmpty()) {
@@ -97,6 +99,7 @@ public class MainActivity extends AppCompatActivity implements BotReply {
     new SendMessageInBg(this, sessionName, sessionsClient, input).execute();
   }
 
+  @SuppressLint("NotifyDataSetChanged")
   @Override
   public void callback(DetectIntentResponse returnResponse) {
      if(returnResponse!=null) {

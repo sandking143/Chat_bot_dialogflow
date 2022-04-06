@@ -2,6 +2,8 @@ package com.bae.dialogflowbot.helpers;
 
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.bae.dialogflowbot.MainActivity;
 import com.bae.dialogflowbot.interfaces.BotReply;
 import com.google.cloud.dialogflow.v2.DetectIntentRequest;
 import com.google.cloud.dialogflow.v2.DetectIntentResponse;
@@ -12,14 +14,14 @@ import com.google.cloud.dialogflow.v2.SessionsClient;
 public class SendMessageInBg extends AsyncTask<Void, Void, DetectIntentResponse> {
 
 
-  private SessionName session;
-  private SessionsClient sessionsClient;
-  private QueryInput queryInput;
+  private final SessionName session;
+  private final SessionsClient sessionsClient;
+  private final QueryInput queryInput;
   private String TAG = "async";
   private BotReply botReply;
 
-  public SendMessageInBg(BotReply botReply,SessionName session, SessionsClient sessionsClient,
-      QueryInput queryInput) {
+  public SendMessageInBg(MainActivity botReply, SessionName session, SessionsClient sessionsClient,
+                         QueryInput queryInput) {
     this.botReply = botReply;
     this.session = session;
     this.sessionsClient = sessionsClient;

@@ -13,10 +13,10 @@ import static android.content.ContentValues.TAG;
 
 public class RequestJavaV2Task extends AsyncTask<Void, Void, DetectIntentResponse> {
 
-  private BotReply mInterface;
-  private SessionName session;
-  private SessionsClient sessionsClient;
-  private QueryInput queryInput;
+  private final BotReply mInterface;
+  private final SessionName session;
+  private final SessionsClient sessionsClient;
+  private final QueryInput queryInput;
 
   public RequestJavaV2Task(BotReply mInterface, SessionName session, SessionsClient sessionsClient,
       QueryInput queryInput) {

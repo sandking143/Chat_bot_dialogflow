@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-  compileSdkVersion 30
+  compileSdkVersion 32
   buildToolsVersion "29.0.2"
 
   packagingOptions {
@@ -12,7 +12,7 @@ android {
   defaultConfig {
     applicationId "com.bae.dialogflowbot"
     minSdkVersion 23
-    targetSdkVersion 30
+    targetSdkVersion 32
     versionCode 1
     versionName "1.0"
 
